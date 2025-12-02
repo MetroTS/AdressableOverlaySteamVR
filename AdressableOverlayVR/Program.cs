@@ -1,21 +1,20 @@
-﻿using System;
-using Valve.VR;
+using System;
+using System.Windows.Forms;
+using AdressableOverlayVR.Forms;
+using AdressableOverlayVR.Vr;
 
-class Program
-{
-    static void Main()
-    {
-        EVRInitError err = EVRInitError.None;
-        OpenVR.Init(ref err, EVRApplicationType.VRApplication_Overlay);
-
-        Console.WriteLine("OpenVR init: " + err);
-    }
-}
 
 namespace AdressableOverlay
 {
-    public partial class WristOverlay()
+    internal static class MainProgramm
     {
-         InitializeComponent
+        static void Main()
+            {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            InitVR.Initialize();                                                                                                                                            
+            Application.Run(new AOVR());
+            InitVR.Shutdown();
+        }
     }
 }
