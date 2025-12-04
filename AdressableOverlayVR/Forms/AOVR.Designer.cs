@@ -6,30 +6,53 @@ namespace AdressableOverlayVR.Forms
     {
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            this.ClientSize = new System.Drawing.Size(1080, 720);
-            this.Name = "AOVR";
-            this.ResumeLayout(false);
-        }
-        public void CustomizeLinearGradients(PaintEventArgs e)
-        {
-            LinearGradientBrush linGrBrush = new LinearGradientBrush(
-               new Point(0, 10),
-               new Point(200, 10),
-               Color.FromArgb(255, 0, 0, 0),     // Opaque black
-               Color.FromArgb(255, 255, 0, 0));  // Opaque red
-
-            float[] relativeIntensities = { 0.0f, 0.5f, 1.0f };
-            float[] relativePositions = { 0.0f, 0.2f, 1.0f };
-
-            //Create a Blend object and assign it to linGrBrush.
-            Blend blend = new Blend();
-            blend.Factors = relativeIntensities;
-            blend.Positions = relativePositions;
-            linGrBrush.Blend = blend;
-
-            e.Graphics.FillEllipse(linGrBrush, 0, 30, 200, 100);
-            e.Graphics.FillRectangle(linGrBrush, 0, 155, 500, 30);
+            int y1 = 40;
+            hmd = new PictureBox();
+            lcont = new PictureBox();
+            rcont = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)hmd).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)lcont).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)rcont).BeginInit();
+            SuspendLayout();
+            // 
+            // hmd
+            // 
+            hmd.Image = Properties.Resources.headset_status_png;
+            hmd.Location = new Point(50, y1);
+            hmd.Name = "hmd";
+            hmd.Size = new Size(102, 64);
+            hmd.TabIndex = 0;
+            hmd.TabStop = false;
+            // 
+            // lcont
+            // 
+            lcont.Image = Properties.Resources.lcont;
+            lcont.Location = new Point(200, y1);
+            lcont.Name = "lcont";
+            lcont.Size = new Size(58, 64);
+            lcont.TabIndex = 1;
+            lcont.TabStop = false;
+            // 
+            // rcont
+            // 
+            rcont.Image = Properties.Resources.rcont;
+            rcont.Location = new Point(300, y1);
+            rcont.Name = "rcont";
+            rcont.Size = new Size(58, 64);
+            rcont.TabIndex = 2;
+            rcont.TabStop = false;
+            // 
+            // AOVR
+            // 
+            ClientSize = new Size(600, 480);
+            Controls.Add(rcont);
+            Controls.Add(lcont);
+            Controls.Add(hmd);
+            Name = "AOVR";
+            ((System.ComponentModel.ISupportInitialize)hmd).EndInit();
+            ((System.ComponentModel.ISupportInitialize)lcont).EndInit();
+            ((System.ComponentModel.ISupportInitialize)rcont).EndInit();
+            ResumeLayout(false);
         }
     }
 }
