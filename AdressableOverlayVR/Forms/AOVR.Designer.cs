@@ -7,34 +7,28 @@ namespace AdressableOverlayVR.Forms
         private void InitializeComponent()
         {
             int y1 = 40;
-            hmd = new PictureBox();
-            lcont = new PictureBox();
-            rcont = new PictureBox();
+            PictureBox hmd = new PictureBox();
+            PictureBox lcont = new PictureBox();
+            PictureBox rcont = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)hmd).BeginInit();
             ((System.ComponentModel.ISupportInitialize)lcont).BeginInit();
             ((System.ComponentModel.ISupportInitialize)rcont).BeginInit();
             SuspendLayout();
-            // 
             // hmd
-            // 
             hmd.Image = Properties.Resources.headset_status_png;
             hmd.Location = new Point(50, y1);
             hmd.Name = "hmd";
             hmd.Size = new Size(102, 64);
             hmd.TabIndex = 0;
             hmd.TabStop = false;
-            // 
             // lcont
-            // 
             lcont.Image = Properties.Resources.lcont;
             lcont.Location = new Point(200, y1);
             lcont.Name = "lcont";
             lcont.Size = new Size(58, 64);
             lcont.TabIndex = 1;
             lcont.TabStop = false;
-            // 
             // rcont
-            // 
             rcont.Image = Properties.Resources.rcont;
             rcont.Location = new Point(300, y1);
             rcont.Name = "rcont";
