@@ -8,5 +8,15 @@ namespace AdressableOverlayVR.Forms
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bathmd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
